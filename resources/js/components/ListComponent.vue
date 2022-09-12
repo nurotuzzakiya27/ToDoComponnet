@@ -1,7 +1,8 @@
 <template>
   <ul class="list">
     <li v-for="(item, index) in listdata" :key="index">
-      {{ item.title }}
+      <input type="checkbox" :id="'list' + index" v-model="item.status" />
+      <label :class="item.status ? 'done' : ''">{{ item.title }}</label>
       <button-form
         @emitClick="deleteList(index)"
         text="Hapus"
@@ -22,7 +23,7 @@ export default {
   },
   methods: {
     deleteList(index) {
-      this.$emit("emitDelete", index);
+      this.$emit("emitClick");
     },
   },
 };

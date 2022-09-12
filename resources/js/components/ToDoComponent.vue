@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="title">To Do List</h1>
+    <title-form title="To Do List" />
     <input-form @emitSubmit="addList" />
     <list :listdata="list" @emitDelete="deleteList" />
   </div>
@@ -12,15 +12,17 @@ export default {
       list: [
         {
           title: "menyapu",
+          status: true,
         },
         {
           title: "cuci piring",
+          status: false,
         },
         {
           title: "pel",
+          status: true,
         },
       ],
-      input: null,
     };
   },
   mounted() {
@@ -32,7 +34,6 @@ export default {
         title: inputform,
       };
       this.list.push(newList);
-      this.input = null;
     },
     deleteList(index) {
       this.list.splice(index, 1);
