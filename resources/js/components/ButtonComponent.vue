@@ -1,5 +1,5 @@
 <template>
-  <button type="button" @click="emitClick" :class="color">{{ text }}</button>
+  <button type="button" @click="eventClick" :class="color">{{ text }}</button>
 </template> 
 <script>
 export default {
@@ -14,7 +14,7 @@ export default {
     },
   },
   methods: {
-    emitClick() {
+    eventClick() {
       this.$emit("emitClick");
     },
   },

@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <title-form title="To Do List" />
+    <title-form title="Aplikasi Todo" />
     <input-form @emitSubmit="addList" />
-    <list :listdata="list" @emitDelete="deleteList" />
+    <list :listdata="list" @emitClick="deleteList" />
   </div>
 </template> 
 <script>

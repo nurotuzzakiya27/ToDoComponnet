@@ -6,10 +6,16 @@
 export default {
   /** Soal No 2 **/
   props: {
-    title: {
-      type: String,
-      default: "",
-    },
+    title: String,
   },
+
+  // props: ["title"],
+
+  // props: {
+  //   title: {
+  //     type: String,
+  //     default: "",
+  //   },
+  // },
 };
 </script>
