@@ -4,29 +4,27 @@
       <!-- Soal no. 3 -->
       <input type="checkbox" :id="'list' + index" v-model="item.status" />
       <label :class="item.status ? 'done' : ''">{{ item.title }}</label>
+      
       <!-- {{ item.title }} -->
-      <button-form
-        @emitClick="deleteList(index)"
-        text="Hapus"
-        color="transparent"
-      />
+      <button-form textlabel="Hapus" @emitClick="deleteList(index)" stylecustom="transparent"/>
     </li>
   </ul>
-</template> 
+</template>
+
 <script>
 export default {
-  props: {
+  props:{
     listdata: {
       type: Array,
       default: () => {
-        return [];
-      },
-    },
+        return []
+      }
+    }
   },
-  methods: {
-    deleteList(index) {
-      this.$emit("emitClick", index);
-    },
-  },
-};
+  methods:{
+    deleteList(index){
+      this.$emit("emitDelete", index)
+    }
+  }
+}
 </script>

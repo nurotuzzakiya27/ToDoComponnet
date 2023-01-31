@@ -1,34 +1,39 @@
 <template>
-  <button type="button" @click="eventClick" :class="color">{{ text }}</button>
-</template> 
+  <button type="button" 
+    @click="functionClick" 
+    :class="stylecustom"
+  >
+    {{ textlabel }}
+  </button>
+</template>
+
 <script>
 export default {
-  props: {
-    text: {
+  props:{
+    textlabel:{
       type: String,
-      default: "",
+      default: "Label"
     },
-    color: {
+    stylecustom:{
       type: String,
-      default: "",
+      default: ""
     },
   },
-  methods: {
-    eventClick() {
-      this.$emit("emitClick");
-    },
-  },
-};
+  methods:{
+    functionClick(){
+      this.$emit("emitClick")
+    }
+  }
+}
 </script>
 
 <style scoped>
-.transparent {
+.transparent{
   font-size: 11px;
   color: darksalmon;
   background: transparent;
 }
-
-.blue {
+.blue{
   background: lightblue;
   border: 1px solid lightblue;
 }

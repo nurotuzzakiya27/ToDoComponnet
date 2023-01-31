@@ -1,25 +1,26 @@
 <template>
   <form class="form">
     <input type="text" v-model="inputform" />
-    <button-form @emitClick="reset" text="Reset" color="blue" />
-    <button-form @emitClick="addList" text="Submit" />
+    <button-form textlabel="Submit" @emitClick="addList" stylecustom="blue" />
+    <button-form textlabel="Reset" @emitClick="resetList" />
   </form>
-</template> 
+</template>
+
 <script>
 export default {
-  data() {
+  data(){
     return {
-      inputform: "",
-    };
+      inputform: ""
+    }
   },
-  methods: {
-    addList() {
-      this.$emit("emitSubmit", this.inputform);
-      this.inputform = "";
+  methods:{
+    addList(){
+      this.$emit("emitSubmit", this.inputform)
+      this.inputform = ""
     },
-    reset() {
-      this.inputform = "";
-    },
-  },
-};
+    resetList(){
+      this.inputform = ""
+    }
+  }
+}
 </script>

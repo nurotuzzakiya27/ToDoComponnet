@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <title-form title="Aplikasi Todo" />
-    <input-form @emitSubmit="addList" />
-    <list :listdata="list" @emitClick="deleteList" />
+    <h1 class="title">To Do List</h1>
+    <input-form @emitSubmit="addList"/>
+    <list :listdata="list" @emitDelete="deleteList"/>
   </div>
 </template> 
 <script>
@@ -25,13 +25,10 @@ export default {
       ],
     };
   },
-  mounted() {
-    console.log("component mounted.");
-  },
   methods: {
-    addList(inputform) {
+    addList(datainput) {
       let newList = {
-        title: inputform,
+        title: datainput,
       };
       this.list.push(newList);
     },
