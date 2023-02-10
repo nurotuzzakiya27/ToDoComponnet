@@ -10,25 +10,34 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
-     
+      list: [
+        {
+            title: "menyapu",
+            status: true,
+        },
+        {
+            title: "cuci piring",
+            status: false,
+        },
+        {
+            title: "pel",
+            status: true,
+        },
+      ],
     };
   },
   computed: {
-    ...mapGetters({
-      list: 'getToDo'
-    })
+    
   },
   methods: {
     addList(datainput) {
       let newList = {
         title: datainput,
       };
-      // this.list.push(newList);
-      this.$store.dispatch('addList', newList)
+      this.list.push(newList);
     },
     deleteList(index) {
-      // this.list.splice(index, 1);
-      this.$store.dispatch('deleteList', index)
+      this.list.splice(index, 1);
     },
   },
 };

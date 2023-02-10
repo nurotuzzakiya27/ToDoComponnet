@@ -5449,32 +5449,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
-    return {};
+    return {
+      list: [{
+        title: "menyapu",
+        status: true
+      }, {
+        title: "cuci piring",
+        status: false
+      }, {
+        title: "pel",
+        status: true
+      }]
+    };
   },
-  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)({
-    list: 'getToDo'
-  })),
+  computed: {},
   methods: {
     addList: function addList(datainput) {
       var newList = {
         title: datainput
-      }; // this.list.push(newList);
-
-      this.$store.dispatch('addList', newList);
+      };
+      this.list.push(newList);
     },
     deleteList: function deleteList(index) {
-      // this.list.splice(index, 1);
-      this.$store.dispatch('deleteList', index);
+      this.list.splice(index, 1);
     }
   }
 });
@@ -5864,39 +5864,10 @@ __webpack_require__.r(__webpack_exports__);
 
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
-  state: {
-    list: [{
-      title: "menyapu",
-      status: true
-    }, {
-      title: "cuci piring",
-      status: false
-    }, {
-      title: "pel",
-      status: true
-    }]
-  },
-  getters: {
-    getToDo: function getToDo(state) {
-      return state.list;
-    }
-  },
-  actions: {
-    addList: function addList(context, payload) {
-      context.commit('ADD_TODO', payload);
-    },
-    deleteList: function deleteList(context, payload) {
-      context.commit('DELETE_TODO', payload);
-    }
-  },
-  mutations: {
-    ADD_TODO: function ADD_TODO(state, payload) {
-      state.list.push(payload);
-    },
-    DELETE_TODO: function DELETE_TODO(state, payload) {
-      state.list.splice(payload, 1);
-    }
-  },
+  state: {},
+  getters: {},
+  actions: {},
+  mutations: {},
   modules: {}
 }));
 
